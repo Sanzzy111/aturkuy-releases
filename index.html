@@ -22,75 +22,77 @@ input:focus,textarea:focus{border-color:#6366f1}
 textarea{min-height:85px;line-height:1.65}
 .field{display:flex;flex-direction:column}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
-/* Token field */
 .token-wrap{position:relative}
 .token-wrap input{padding-right:3rem;font-family:'Courier New',monospace;font-size:.78rem}
 .token-eye{position:absolute;right:.85rem;top:50%;transform:translateY(-50%);background:none;border:none;color:#475569;cursor:pointer;padding:.2rem;display:flex;align-items:center}
 .token-eye:hover{color:#94a3b8}
-.token-hint{font-size:.62rem;color:#475569;line-height:1.6;margin-top:.15rem}
-.token-hint a{color:#6366f1;text-decoration:none}
-.token-hint a:hover{text-decoration:underline}
-/* Upload zone */
-.upload-zone{border:2px dashed #334155;border-radius:.9rem;padding:1.75rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative;overflow:hidden}
-.upload-zone:hover,.upload-zone.drag{border-color:#6366f1;background:rgba(99,102,241,.06)}
-.upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.upload-zone svg{width:32px;height:32px;color:#475569;margin:0 auto .6rem;display:block}
-.uz-title{font-size:.8rem;font-weight:700;color:#94a3b8}
-.uz-sub{font-size:.62rem;color:#475569;margin-top:.25rem}
-.uz-file{font-size:.78rem;font-weight:700;color:#6366f1;margin-top:.5rem;word-break:break-all;padding:.5rem .75rem;background:rgba(99,102,241,.08);border-radius:.5rem;display:inline-block}
-/* Progress */
-.progress-wrap{display:none;flex-direction:column;gap:.5rem}
+.hint{font-size:.62rem;color:#475569;line-height:1.6;margin-top:.2rem}
+.hint a{color:#6366f1;text-decoration:none}
+.hint a:hover{text-decoration:underline}
+.hint strong{color:#94a3b8}
+/* Steps progress */
+.progress-wrap{display:none;flex-direction:column;gap:.75rem}
 .progress-wrap.vis{display:flex}
-.prog-bar-bg{height:10px;background:#0f172a;border-radius:999px;overflow:hidden}
+.prog-bar-bg{height:8px;background:#0f172a;border-radius:999px;overflow:hidden}
 .prog-bar-fill{height:100%;background:linear-gradient(90deg,#6366f1,#7c3aed);border-radius:999px;transition:width .4s ease;width:0%}
 .prog-label{display:flex;justify-content:space-between;align-items:center}
-.prog-text{font-size:.68rem;font-weight:700;color:#64748b}
-.prog-pct{font-size:.68rem;font-weight:800;color:#6366f1;font-family:'Courier New',monospace}
-/* Steps */
-.step-list{display:flex;flex-direction:column;gap:.5rem}
-.step-item{display:flex;align-items:center;gap:.75rem;padding:.65rem .85rem;border-radius:.7rem;border:1px solid #334155;background:#0f172a;transition:all .3s}
-.step-item.active{border-color:#6366f1;background:rgba(99,102,241,.06)}
-.step-item.done{border-color:#10b981;background:rgba(16,185,129,.06)}
-.step-item.error{border-color:#f43f5e;background:rgba(244,63,94,.06)}
-.step-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.65rem;font-weight:900;border:2px solid #334155;color:#475569;transition:all .3s}
-.step-item.active .step-dot{border-color:#6366f1;color:#6366f1;animation:pulse-ring 1.5s infinite}
+.prog-text{font-size:.7rem;font-weight:700;color:#64748b}
+.prog-pct{font-size:.7rem;font-weight:800;color:#6366f1;font-family:'Courier New',monospace}
+.step-list{display:flex;flex-direction:column;gap:.45rem}
+.step-item{display:flex;align-items:center;gap:.7rem;padding:.6rem .85rem;border-radius:.7rem;border:1px solid #334155;background:#0f172a;transition:all .3s}
+.step-item.active{border-color:#6366f1;background:rgba(99,102,241,.07)}
+.step-item.done{border-color:#10b981;background:rgba(16,185,129,.07)}
+.step-item.err{border-color:#f43f5e;background:rgba(244,63,94,.07)}
+.step-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.65rem;font-weight:900;border:2px solid #334155;color:#475569;transition:all .3s}
+.step-item.active .step-dot{border-color:#6366f1;color:#6366f1;animation:pr 1.5s infinite}
 .step-item.done .step-dot{border-color:#10b981;background:#10b981;color:#fff}
-.step-item.error .step-dot{border-color:#f43f5e;background:#f43f5e;color:#fff}
-@keyframes pulse-ring{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.4)}50%{box-shadow:0 0 0 6px rgba(99,102,241,0)}}
-.step-label{font-size:.78rem;font-weight:700;color:#64748b;flex:1}
-.step-item.active .step-label{color:#e2e8f0}
-.step-item.done .step-label{color:#10b981}
-.step-item.error .step-label{color:#f43f5e}
+.step-item.err .step-dot{border-color:#f43f5e;background:#f43f5e;color:#fff}
+@keyframes pr{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.4)}50%{box-shadow:0 0 0 5px rgba(99,102,241,0)}}
+.step-lbl{font-size:.75rem;font-weight:700;color:#64748b;flex:1}
+.step-item.active .step-lbl{color:#e2e8f0}
+.step-item.done .step-lbl{color:#10b981}
+.step-item.err .step-lbl{color:#f43f5e}
 /* Buttons */
 .btn{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;padding:.9rem;border-radius:.9rem;border:none;font-family:inherit;font-size:.82rem;font-weight:800;cursor:pointer;transition:all .2s}
 .btn-primary{background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;box-shadow:0 4px 20px rgba(99,102,241,.35)}
 .btn-primary:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 28px rgba(99,102,241,.45)}
 .btn-primary:active:not(:disabled){transform:scale(.98)}
 .btn-primary:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
-.btn-sec{background:#0f172a;border:1.5px solid #334155;color:#94a3b8}
-.btn-sec:hover{border-color:#6366f1;color:#6366f1}
-/* Success card */
-.success-card{display:none;background:rgba(16,185,129,.08);border:1.5px solid rgba(16,185,129,.3);border-radius:1rem;padding:1.25rem 1.5rem;text-align:center;flex-direction:column;align-items:center;gap:.6rem}
-.success-card.vis{display:flex}
-.success-icon{width:52px;height:52px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;margin:0 auto}
-.success-icon svg{width:26px;height:26px}
-.success-title{font-size:1rem;font-weight:800;color:#10b981}
-.success-sub{font-size:.72rem;color:#64748b;line-height:1.65}
-/* Current version */
+/* Success */
+.success-box{display:none;background:rgba(16,185,129,.08);border:1.5px solid rgba(16,185,129,.3);border-radius:1rem;padding:1.5rem;text-align:center;flex-direction:column;align-items:center;gap:.6rem}
+.success-box.vis{display:flex}
+.suc-ico{width:52px;height:52px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center}
+.suc-ico svg{width:26px;height:26px}
+.suc-title{font-size:1rem;font-weight:800;color:#10b981}
+.suc-sub{font-size:.72rem;color:#64748b;line-height:1.7}
+/* Ver box */
 .ver-box{background:#0f172a;border:1px solid #334155;border-radius:.85rem;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.ver-box-left{}
-.ver-label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#475569;margin-bottom:.2rem}
-.ver-val{font-size:.95rem;font-weight:800;color:#e2e8f0}
-.badge{display:inline-flex;align-items:center;gap:.3rem;padding:.3rem .65rem;border-radius:.5rem;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.badge{display:inline-flex;align-items:center;padding:.3rem .65rem;border-radius:.5rem;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 .badge-green{background:rgba(16,185,129,.15);color:#10b981;border:1px solid rgba(16,185,129,.3)}
 .badge-gray{background:rgba(100,116,139,.15);color:#64748b;border:1px solid rgba(100,116,139,.2)}
+/* Info boxes */
+.info-box{background:#0f172a;border:1px solid #334155;border-radius:.75rem;padding:.85rem 1rem;font-size:.72rem;color:#64748b;line-height:1.7}
+.info-box.accent{border-color:rgba(99,102,241,.35);background:rgba(99,102,241,.05)}
+.info-box code{font-family:'Courier New',monospace;font-size:.75rem;color:#a78bfa;background:rgba(99,102,241,.1);padding:.1rem .35rem;border-radius:.3rem}
+/* Netlify steps */
+.netlify-steps{display:flex;flex-direction:column;gap:.6rem}
+.ns{display:flex;gap:.75rem;align-items:flex-start}
+.ns-num{width:22px;height:22px;border-radius:50%;background:#6366f1;color:#fff;font-size:.6rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.ns-body{flex:1;font-size:.72rem;color:#64748b;line-height:1.65}
+.ns-body strong{color:#94a3b8}
+.ns-body a{color:#6366f1;text-decoration:none}
+.ns-body a:hover{text-decoration:underline}
+/* History */
+.hist-item{background:#0f172a;border:1px solid #334155;border-radius:.75rem;padding:.85rem 1rem;display:flex;align-items:center;gap:.85rem}
+.hist-ver{font-size:.85rem;font-weight:800;color:#e2e8f0}
+.hist-code{font-size:.62rem;font-weight:700;color:#475569}
+.hist-desc{font-size:.65rem;color:#475569;margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hist-date{font-size:.6rem;font-weight:700;color:#475569;text-align:right;white-space:nowrap}
+/* Divider */
+.div{height:1px;background:#334155}
 /* Toast */
 .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(90px);background:#1e293b;border:1px solid #334155;color:#f1f5f9;padding:.7rem 1.25rem;border-radius:.9rem;font-size:.78rem;font-weight:700;box-shadow:0 8px 32px rgba(0,0,0,.4);transition:transform .3s cubic-bezier(.34,1.56,.64,1);z-index:9999;white-space:nowrap;max-width:90vw;text-align:center}
 .toast.show{transform:translateX(-50%) translateY(0)}
-code{background:#0f172a;border:1px solid #334155;border-radius:.35rem;padding:.1rem .4rem;font-family:'Courier New',monospace;font-size:.75rem;color:#a78bfa}
-.divider{height:1px;background:#334155}
-.info-box{background:#0f172a;border:1px solid #334155;border-radius:.75rem;padding:.85rem 1rem;font-size:.72rem;color:#64748b;line-height:1.7}
-.info-box strong{color:#94a3b8}
 </style>
 </head>
 <body>
@@ -116,9 +118,9 @@ code{background:#0f172a;border:1px solid #334155;border-radius:.35rem;padding:.1
       Versi Aktif
     </div>
     <div class="ver-box">
-      <div class="ver-box-left">
-        <div class="ver-label">Versi yang sedang berjalan di user</div>
-        <div class="ver-val" id="cur-ver">Memuat...</div>
+      <div>
+        <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#475569;margin-bottom:.2rem">Versi yang sedang berjalan di user</div>
+        <div style="font-size:.95rem;font-weight:800;color:#e2e8f0" id="cur-ver">Memuat...</div>
       </div>
       <span class="badge badge-gray" id="cur-badge">—</span>
     </div>
@@ -130,34 +132,56 @@ code{background:#0f172a;border:1px solid #334155;border-radius:.35rem;padding:.1
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
       Konfigurasi GitHub
     </div>
-
-    <div class="field">
-      <label>GitHub Username</label>
-      <input type="text" id="gh-user" placeholder="contoh: sanzzy" oninput="saveConfig()"/>
+    <div class="row2">
+      <div class="field">
+        <label>GitHub Username</label>
+        <input type="text" id="gh-user" placeholder="sanzzy111" oninput="saveConfig();updateInfo()"/>
+      </div>
+      <div class="field">
+        <label>Nama Repo</label>
+        <input type="text" id="gh-repo" placeholder="aturkuy-releases" oninput="saveConfig();updateInfo()"/>
+      </div>
     </div>
-
-    <div class="field">
-      <label>Nama Repo</label>
-      <input type="text" id="gh-repo" placeholder="contoh: aturkuy-releases" oninput="saveConfig()"/>
-    </div>
-
     <div class="field">
       <label>Personal Access Token</label>
       <div class="token-wrap">
         <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" oninput="saveConfig()"/>
-        <button class="token-eye" onclick="toggleToken()" title="Tampilkan/sembunyikan token">
-          <svg id="eye-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <button class="token-eye" onclick="toggleToken()">
+          <svg id="eye-icon" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
         </button>
       </div>
-      <div class="token-hint">
-        Buat token di <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens</a> → centang <strong>repo</strong> → Generate. Token disimpan di browser kamu saja, tidak dikirim ke mana pun.
-      </div>
+      <div class="hint">Buat di <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens</a> → centang <strong>repo</strong> → pilih <strong>No expiration</strong>. Tersimpan di browser kamu saja.</div>
     </div>
+    <div class="info-box accent" id="json-url-box" style="display:none">
+      URL JSON yang dibaca app:<br>
+      <code id="json-url-text"></code>
+    </div>
+  </div>
 
-    <div class="info-box" id="repo-url-box" style="display:none">
-      URL JSON: <code id="repo-url-text"></code>
-      <br><br>
-      <strong>Pastikan URL ini sudah dimasukkan ke <code>index.html</code> app di baris <code>OTA_CHECK_URL</code></strong>
+  <!-- PANDUAN HOST APK -->
+  <div class="card">
+    <div class="card-title">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      Upload APK ke Netlify Drop
+    </div>
+    <p class="hint" style="margin-top:0">APK tidak bisa diupload langsung dari browser ke GitHub (CORS restriction). Pakai Netlify Drop — gratis, drag & drop, langsung dapat URL permanen dalam 30 detik.</p>
+    <div class="netlify-steps">
+      <div class="ns">
+        <div class="ns-num">1</div>
+        <div class="ns-body">Buka <a href="https://app.netlify.com/drop" target="_blank"><strong>app.netlify.com/drop</strong></a> di tab baru</div>
+      </div>
+      <div class="ns">
+        <div class="ns-num">2</div>
+        <div class="ns-body">Buat folder baru di HP/PC, taruh file APK di dalamnya, lalu <strong>drag & drop folder itu</strong> ke halaman Netlify Drop (harus folder, bukan file langsung)</div>
+      </div>
+      <div class="ns">
+        <div class="ns-num">3</div>
+        <div class="ns-body">Netlify akan beri URL seperti <strong>https://xxxxx.netlify.app/nama-file.apk</strong> — copy URL lengkap itu</div>
+      </div>
+      <div class="ns">
+        <div class="ns-num">4</div>
+        <div class="ns-body">Paste URL APK di field bawah, lalu isi form dan klik Publish</div>
+      </div>
     </div>
   </div>
 
@@ -181,111 +205,99 @@ code{background:#0f172a;border:1px solid #334155;border-radius:.35rem;padding:.1
 
     <div class="field">
       <label>Deskripsi Update</label>
-      <textarea id="inp-desc" placeholder="Tulis apa yang baru di versi ini. Contoh:&#10;- Notifikasi sekarang akurat meski app ditutup&#10;- Tambah fitur update otomatis&#10;- Perbaikan bug minor"></textarea>
+      <textarea id="inp-desc" placeholder="Tulis apa yang baru. Contoh:&#10;- Notifikasi sekarang akurat meski app ditutup&#10;- Tambah fitur update otomatis&#10;- Perbaikan bug minor"></textarea>
     </div>
 
     <div class="field">
-      <label>File APK</label>
-      <div class="upload-zone" id="upload-zone">
-        <input type="file" id="apk-file" accept=".apk" onchange="handleFile(this)"/>
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <div class="uz-title">Tap untuk pilih file APK</div>
-        <div class="uz-sub">Hanya file .apk</div>
-        <div id="apk-name"></div>
-      </div>
+      <label>URL APK (dari Netlify Drop)</label>
+      <input type="text" id="inp-apkurl" placeholder="https://xxxxx.netlify.app/AturKuy-v1.2.apk"/>
+      <div class="hint">Paste URL APK yang didapat dari Netlify Drop di atas</div>
     </div>
 
-    <!-- Progress steps -->
+    <div class="div"></div>
+
+    <!-- Progress -->
     <div class="progress-wrap" id="progress-wrap">
       <div class="prog-label">
         <div class="prog-text" id="prog-text">Memulai...</div>
         <div class="prog-pct" id="prog-pct">0%</div>
       </div>
       <div class="prog-bar-bg"><div class="prog-bar-fill" id="prog-fill"></div></div>
-      <div class="step-list" id="step-list">
+      <div class="step-list">
         <div class="step-item" id="s1">
-          <div class="step-dot" id="s1-dot">1</div>
-          <div class="step-label">Membuat GitHub Release</div>
+          <div class="step-dot" id="s1d">1</div>
+          <div class="step-lbl">Menyimpan latest-version.json ke GitHub</div>
         </div>
         <div class="step-item" id="s2">
-          <div class="step-dot" id="s2-dot">2</div>
-          <div class="step-label">Mengupload APK</div>
-        </div>
-        <div class="step-item" id="s3">
-          <div class="step-dot" id="s3-dot">3</div>
-          <div class="step-label">Menyimpan latest-version.json</div>
+          <div class="step-dot" id="s2d">2</div>
+          <div class="step-lbl">Verifikasi file tersimpan</div>
         </div>
       </div>
     </div>
 
     <!-- Success -->
-    <div class="success-card" id="success-card">
-      <div class="success-icon">
+    <div class="success-box" id="success-box">
+      <div class="suc-ico">
         <svg fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <div class="success-title">Update Berhasil Dirilis! 🎉</div>
-      <div class="success-sub" id="success-sub"></div>
+      <div class="suc-title">Update Berhasil Dirilis! 🎉</div>
+      <div class="suc-sub" id="suc-sub"></div>
     </div>
 
-    <div class="divider"></div>
-
-    <button class="btn btn-primary" id="publish-btn" onclick="publishUpdate()">
+    <button class="btn btn-primary" id="pub-btn" onclick="publishUpdate()">
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
       Publish Update Sekarang
     </button>
   </div>
 
   <!-- RIWAYAT -->
-  <div class="card" id="history-card" style="display:none">
+  <div class="card" id="hist-card" style="display:none">
     <div class="card-title">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="12 8 12 12 14 14"/><path d="M3.05 11a9 9 0 1 0 .5-4"/><polyline points="3 3 3 7 7 7"/></svg>
       Riwayat Rilis
     </div>
-    <div id="history-list" style="display:flex;flex-direction:column;gap:.6rem"></div>
+    <div id="hist-list" style="display:flex;flex-direction:column;gap:.5rem"></div>
   </div>
 
 </div>
-
 <div class="toast" id="toast"></div>
 
 <script>
-// ── State ──────────────────────────────────────────────────────────────
-let cfg = { user:'', repo:'', token:'' };
-let selectedFile = null;
+let cfg = {user:'', repo:'', token:''};
 let history = [];
 
-// ── Init ───────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
   loadConfig();
   loadHistory();
-  fetchCurrentVersion();
+  setTimeout(fetchCurrentVersion, 600);
 });
 
+// ── Config ──────────────────────────────────────────────────────────────
 function loadConfig() {
   try {
-    const saved = JSON.parse(localStorage.getItem('ak_admin_cfg') || '{}');
-    cfg = { user: saved.user||'', repo: saved.repo||'', token: saved.token||'' };
+    const s = JSON.parse(localStorage.getItem('ak_cfg') || '{}');
+    cfg = {user:s.user||'', repo:s.repo||'aturkuy-releases', token:s.token||''};
     document.getElementById('gh-user').value  = cfg.user;
     document.getElementById('gh-repo').value  = cfg.repo;
     document.getElementById('gh-token').value = cfg.token;
-    updateRepoUrl();
-  } catch(e) {}
+    updateInfo();
+  } catch(e){}
 }
 
 function saveConfig() {
   cfg.user  = document.getElementById('gh-user').value.trim();
   cfg.repo  = document.getElementById('gh-repo').value.trim();
   cfg.token = document.getElementById('gh-token').value.trim();
-  localStorage.setItem('ak_admin_cfg', JSON.stringify(cfg));
-  updateRepoUrl();
+  localStorage.setItem('ak_cfg', JSON.stringify(cfg));
 }
 
-function updateRepoUrl() {
-  const box = document.getElementById('repo-url-box');
-  const txt = document.getElementById('repo-url-text');
-  if (cfg.user && cfg.repo) {
-    const url = `https://${cfg.user}.github.io/${cfg.repo}/latest-version.json`;
-    txt.textContent = url;
+function updateInfo() {
+  const box = document.getElementById('json-url-box');
+  const txt = document.getElementById('json-url-text');
+  const u = document.getElementById('gh-user').value.trim();
+  const r = document.getElementById('gh-repo').value.trim();
+  if (u && r) {
+    txt.textContent = `https://${u}.github.io/${r}/latest-version.json`;
     box.style.display = 'block';
   } else {
     box.style.display = 'none';
@@ -304,26 +316,22 @@ function toggleToken() {
   }
 }
 
-// ── Fetch versi aktif dari GitHub Pages ────────────────────────────────
+// ── Fetch versi aktif ───────────────────────────────────────────────────
 async function fetchCurrentVersion() {
   const el = document.getElementById('cur-ver');
   const badge = document.getElementById('cur-badge');
   try {
-    await new Promise(r => setTimeout(r, 500)); // tunggu config load
-    if (!cfg.user || !cfg.repo) {
-      el.textContent = 'Isi konfigurasi GitHub dulu';
-      return;
-    }
+    if (!cfg.user || !cfg.repo) { el.textContent = 'Isi konfigurasi GitHub dulu'; return; }
     const url = `https://${cfg.user}.github.io/${cfg.repo}/latest-version.json?t=${Date.now()}`;
     const res = await fetch(url);
-    if (!res.ok) throw new Error('Belum ada rilis');
-    const data = await res.json();
-    el.textContent = `v${data.version} (code ${data.versionCode})`;
+    if (!res.ok) throw new Error();
+    const d = await res.json();
+    el.textContent = `v${d.version} (code ${d.versionCode})`;
     badge.textContent = 'Live';
     badge.className = 'badge badge-green';
-
     // Pre-fill version code +1
-    document.getElementById('inp-vcode').value = data.versionCode + 1;
+    if (!document.getElementById('inp-vcode').value)
+      document.getElementById('inp-vcode').value = d.versionCode + 1;
   } catch(e) {
     el.textContent = 'Belum ada rilis';
     badge.textContent = '—';
@@ -331,148 +339,37 @@ async function fetchCurrentVersion() {
   }
 }
 
-// ── File picker ─────────────────────────────────────────────────────────
-function handleFile(input) {
-  const file = input.files[0];
-  if (!file) return;
-  selectedFile = file;
-  const mb = (file.size / 1024 / 1024).toFixed(1);
-  const nameEl = document.getElementById('apk-name');
-  nameEl.innerHTML = `<div class="uz-file">✓ ${file.name} &nbsp;·&nbsp; ${mb} MB</div>`;
-}
-
-const zone = document.getElementById('upload-zone');
-zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag'); });
-zone.addEventListener('dragleave', () => zone.classList.remove('drag'));
-zone.addEventListener('drop', e => {
-  e.preventDefault(); zone.classList.remove('drag');
-  const file = e.dataTransfer.files[0];
-  if (file?.name.endsWith('.apk')) {
-    selectedFile = file;
-    document.getElementById('apk-file').files = e.dataTransfer.files;
-    const mb = (file.size / 1024 / 1024).toFixed(1);
-    document.getElementById('apk-name').innerHTML =
-      `<div class="uz-file">✓ ${file.name} &nbsp;·&nbsp; ${mb} MB</div>`;
-  }
-});
-
 // ── Publish ─────────────────────────────────────────────────────────────
 async function publishUpdate() {
-  // Validasi
-  cfg.user  = document.getElementById('gh-user').value.trim();
-  cfg.repo  = document.getElementById('gh-repo').value.trim();
-  cfg.token = document.getElementById('gh-token').value.trim();
+  saveConfig();
   const version = document.getElementById('inp-version').value.trim();
   const vcode   = document.getElementById('inp-vcode').value.trim();
   const desc    = document.getElementById('inp-desc').value.trim();
+  const apkUrl  = document.getElementById('inp-apkurl').value.trim();
 
-  if (!cfg.user)  { showToast('⚠️ Isi GitHub Username'); return; }
-  if (!cfg.repo)  { showToast('⚠️ Isi Nama Repo'); return; }
-  if (!cfg.token) { showToast('⚠️ Isi Personal Access Token'); return; }
-  if (!version)   { showToast('⚠️ Isi Version Name'); return; }
-  if (!vcode || isNaN(Number(vcode))) { showToast('⚠️ Isi Version Code dengan angka'); return; }
-  if (!desc)      { showToast('⚠️ Isi Deskripsi Update'); return; }
-  if (!selectedFile) { showToast('⚠️ Pilih file APK dulu'); return; }
+  if (!cfg.user)  return showToast('⚠️ Isi GitHub Username');
+  if (!cfg.repo)  return showToast('⚠️ Isi Nama Repo');
+  if (!cfg.token) return showToast('⚠️ Isi Personal Access Token');
+  if (!version)   return showToast('⚠️ Isi Version Name');
+  if (!vcode || isNaN(Number(vcode))) return showToast('⚠️ Version Code harus angka');
+  if (!desc)      return showToast('⚠️ Isi Deskripsi Update');
+  if (!apkUrl || !apkUrl.startsWith('http')) return showToast('⚠️ Isi URL APK yang valid');
 
-  saveConfig();
-
-  // Reset UI
-  const btn = document.getElementById('publish-btn');
+  const btn = document.getElementById('pub-btn');
   btn.disabled = true;
-  document.getElementById('success-card').classList.remove('vis');
+  document.getElementById('success-box').classList.remove('vis');
   document.getElementById('progress-wrap').classList.add('vis');
-  resetSteps();
-  setProgress(0, 'Memulai...');
+  resetSteps(); setProgress(5, 'Menyiapkan...');
+
+  const headers = {
+    'Authorization': `token ${cfg.token}`,
+    'Accept': 'application/vnd.github.v3+json',
+    'Content-Type': 'application/json'
+  };
 
   try {
-    const tag     = `v${version}`;
-    const apkName = `AturKuy-v${version}.apk`;
-    const headers = {
-      'Authorization': `token ${cfg.token}`,
-      'Accept': 'application/vnd.github.v3+json',
-      'Content-Type': 'application/json'
-    };
-
-    // ── STEP 1: Buat GitHub Release ─────────────────────────────────
-    stepActive(1);
-    setProgress(5, 'Membuat GitHub Release...');
-
-    // Cek apakah tag sudah ada, kalau ada hapus dulu
-    const checkTag = await fetch(
-      `https://api.github.com/repos/${cfg.user}/${cfg.repo}/releases/tags/${tag}`,
-      { headers }
-    );
-    if (checkTag.ok) {
-      const existing = await checkTag.json();
-      await fetch(
-        `https://api.github.com/repos/${cfg.user}/${cfg.repo}/releases/${existing.id}`,
-        { method: 'DELETE', headers }
-      );
-    }
-
-    const releaseRes = await fetch(
-      `https://api.github.com/repos/${cfg.user}/${cfg.repo}/releases`,
-      {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({
-          tag_name: tag,
-          name: `AturKuy ${tag}`,
-          body: desc,
-          draft: false,
-          prerelease: false
-        })
-      }
-    );
-
-    if (!releaseRes.ok) {
-      const err = await releaseRes.json();
-      throw new Error(`Gagal buat release: ${err.message || releaseRes.status}`);
-    }
-
-    const release = await releaseRes.json();
-    const uploadUrl = release.upload_url.replace('{?name,label}', '');
-    stepDone(1);
-    setProgress(25, 'Release berhasil dibuat');
-
-    // ── STEP 2: Upload APK ─────────────────────────────────────────
-    stepActive(2);
-    setProgress(30, 'Mengupload APK...');
-
-    const apkBuffer = await selectedFile.arrayBuffer();
-
-    // Upload dengan progress tracking via XMLHttpRequest
-    const apkUrl = await new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', `${uploadUrl}?name=${encodeURIComponent(apkName)}`);
-      xhr.setRequestHeader('Authorization', `token ${cfg.token}`);
-      xhr.setRequestHeader('Content-Type', 'application/vnd.android.package-archive');
-      xhr.upload.onprogress = e => {
-        if (e.lengthComputable) {
-          const pct = Math.round(30 + (e.loaded / e.total) * 55);
-          const mb = (e.loaded / 1024 / 1024).toFixed(1);
-          const total = (e.total / 1024 / 1024).toFixed(1);
-          setProgress(pct, `Upload APK: ${mb} / ${total} MB`);
-        }
-      };
-      xhr.onload = () => {
-        if (xhr.status === 201) {
-          const data = JSON.parse(xhr.responseText);
-          resolve(data.browser_download_url);
-        } else {
-          reject(new Error(`Upload APK gagal: ${xhr.status}`));
-        }
-      };
-      xhr.onerror = () => reject(new Error('Upload APK gagal (network error)'));
-      xhr.send(apkBuffer);
-    });
-
-    stepDone(2);
-    setProgress(88, 'APK berhasil diupload');
-
-    // ── STEP 3: Upload latest-version.json ─────────────────────────
-    stepActive(3);
-    setProgress(90, 'Menyimpan latest-version.json...');
+    // ── STEP 1: Simpan latest-version.json ke GitHub ────────────────
+    stepActive(1); setProgress(20, 'Menyimpan latest-version.json...');
 
     const jsonData = {
       version:     version,
@@ -481,54 +378,83 @@ async function publishUpdate() {
       apkUrl:      apkUrl,
       publishedAt: new Date().toISOString()
     };
+
     const jsonContent = btoa(unescape(encodeURIComponent(
       JSON.stringify(jsonData, null, 2)
     )));
 
-    // Cek apakah file sudah ada (untuk dapat SHA)
-    const existingFile = await fetch(
+    // Cek apakah file sudah ada (butuh SHA untuk update)
+    const checkRes = await fetch(
       `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/latest-version.json`,
       { headers }
     );
-    const existingData = existingFile.ok ? await existingFile.json() : null;
+    const existing = checkRes.ok ? await checkRes.json() : null;
 
-    const putBody = {
-      message: `chore: release ${tag}`,
-      content: jsonContent,
-      ...(existingData?.sha ? { sha: existingData.sha } : {})
-    };
-
-    const jsonRes = await fetch(
+    const putRes = await fetch(
       `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/latest-version.json`,
-      { method: 'PUT', headers, body: JSON.stringify(putBody) }
+      {
+        method: 'PUT',
+        headers,
+        body: JSON.stringify({
+          message: `release: v${version}`,
+          content: jsonContent,
+          ...(existing?.sha ? { sha: existing.sha } : {})
+        })
+      }
     );
 
-    if (!jsonRes.ok) {
-      const err = await jsonRes.json();
-      throw new Error(`Gagal simpan JSON: ${err.message || jsonRes.status}`);
+    if (!putRes.ok) {
+      const err = await putRes.json();
+      throw new Error(err.message || `GitHub error ${putRes.status}`);
     }
 
-    stepDone(3);
-    setProgress(100, 'Selesai!');
+    stepDone(1); setProgress(70, 'File tersimpan, memverifikasi...');
 
-    // ── Sukses ─────────────────────────────────────────────────────
+    // ── STEP 2: Verifikasi ──────────────────────────────────────────
+    stepActive(2); setProgress(80, 'Memverifikasi...');
+
+    // Tunggu GitHub Pages deploy (biasanya 10-30 detik)
+    await sleep(3000);
+
+    // Coba fetch dari GitHub Pages
+    let verified = false;
+    for (let i = 0; i < 5; i++) {
+      try {
+        const vRes = await fetch(
+          `https://${cfg.user}.github.io/${cfg.repo}/latest-version.json?t=${Date.now()}`,
+          { cache: 'no-store' }
+        );
+        if (vRes.ok) {
+          const vData = await vRes.json();
+          if (Number(vData.versionCode) === Number(vcode)) {
+            verified = true; break;
+          }
+        }
+      } catch(e) {}
+      await sleep(3000);
+    }
+
+    stepDone(2);
+    setProgress(100, verified ? 'Live! ✓' : 'Tersimpan (GitHub Pages butuh ~1 menit untuk update)');
+
+    // ── Sukses ──────────────────────────────────────────────────────
     saveHistory({ version, vcode, desc, apkUrl, date: new Date().toISOString() });
     fetchCurrentVersion();
 
-    document.getElementById('success-card').classList.add('vis');
-    document.getElementById('success-sub').textContent =
-      `v${version} (code ${vcode}) sudah live. Semua user yang buka AturKuy akan otomatis dapat notif update.`;
+    document.getElementById('success-box').classList.add('vis');
+    document.getElementById('suc-sub').textContent =
+      `v${version} (code ${vcode}) sudah dirilis. Semua user yang buka AturKuy akan otomatis dapat notif update.`;
 
-    // Reset form
+    // Reset form (kecuali config)
     document.getElementById('inp-version').value = '';
     document.getElementById('inp-desc').value = '';
-    document.getElementById('apk-name').innerHTML = '';
-    selectedFile = null;
+    document.getElementById('inp-apkurl').value = '';
+    document.getElementById('inp-vcode').value = Number(vcode) + 1;
 
     showToast('🎉 Update berhasil dirilis!');
 
   } catch(err) {
-    stepError();
+    stepErr();
     setProgress(0, `Error: ${err.message}`);
     document.getElementById('prog-text').style.color = '#f43f5e';
     showToast(`❌ ${err.message}`);
@@ -538,7 +464,9 @@ async function publishUpdate() {
   }
 }
 
-// ── Helpers: Progress ───────────────────────────────────────────────────
+// ── Helpers ─────────────────────────────────────────────────────────────
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 function setProgress(pct, text) {
   document.getElementById('prog-fill').style.width = pct + '%';
   document.getElementById('prog-pct').textContent = pct + '%';
@@ -547,77 +475,64 @@ function setProgress(pct, text) {
 }
 
 function resetSteps() {
-  [1,2,3].forEach(n => {
+  [1,2].forEach(n => {
     document.getElementById(`s${n}`).className = 'step-item';
-    document.getElementById(`s${n}-dot`).innerHTML = n;
+    document.getElementById(`s${n}d`).innerHTML = n;
   });
 }
-
-function stepActive(n) {
-  document.getElementById(`s${n}`).className = 'step-item active';
-}
-
+function stepActive(n) { document.getElementById(`s${n}`).className = 'step-item active'; }
 function stepDone(n) {
   document.getElementById(`s${n}`).className = 'step-item done';
-  document.getElementById(`s${n}-dot`).innerHTML =
-    '<svg width="14" height="14" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+  document.getElementById(`s${n}d`).innerHTML =
+    '<svg width="13" height="13" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
 }
-
-function stepError() {
-  [1,2,3].forEach(n => {
+function stepErr() {
+  [1,2].forEach(n => {
     if (document.getElementById(`s${n}`).classList.contains('active')) {
-      document.getElementById(`s${n}`).className = 'step-item error';
-      document.getElementById(`s${n}-dot`).innerHTML = '✕';
+      document.getElementById(`s${n}`).className = 'step-item err';
+      document.getElementById(`s${n}d`).textContent = '✕';
     }
   });
 }
 
-// ── History ─────────────────────────────────────────────────────────────
+// ── History ──────────────────────────────────────────────────────────────
 function saveHistory(item) {
   history.unshift(item);
   if (history.length > 10) history = history.slice(0, 10);
-  localStorage.setItem('ak_admin_history', JSON.stringify(history));
+  localStorage.setItem('ak_hist', JSON.stringify(history));
   renderHistory();
 }
-
 function loadHistory() {
-  try {
-    history = JSON.parse(localStorage.getItem('ak_admin_history') || '[]');
-    renderHistory();
-  } catch(e) {}
+  try { history = JSON.parse(localStorage.getItem('ak_hist') || '[]'); } catch(e) { history = []; }
+  renderHistory();
 }
-
 function renderHistory() {
-  const card = document.getElementById('history-card');
-  const list = document.getElementById('history-list');
+  const card = document.getElementById('hist-card');
+  const list = document.getElementById('hist-list');
   if (!history.length) { card.style.display = 'none'; return; }
   card.style.display = 'flex';
   list.innerHTML = history.map(h => {
     const d = new Date(h.date);
-    const dateStr = d.toLocaleDateString('id-ID', { day:'numeric', month:'short', year:'numeric' });
-    const timeStr = d.toLocaleTimeString('id-ID', { hour:'2-digit', minute:'2-digit' });
-    return `
-    <div style="background:#0f172a;border:1px solid #334155;border-radius:.75rem;padding:.85rem 1rem;display:flex;align-items:center;gap:.85rem">
+    const ds = d.toLocaleDateString('id-ID', {day:'numeric',month:'short',year:'numeric'});
+    const ts = d.toLocaleTimeString('id-ID', {hour:'2-digit',minute:'2-digit'});
+    return `<div class="hist-item">
       <div style="flex:1;min-width:0">
-        <div style="font-size:.82rem;font-weight:800;color:#e2e8f0">v${h.version} <span style="font-size:.65rem;font-weight:700;color:#475569">(code ${h.vcode})</span></div>
-        <div style="font-size:.65rem;color:#475569;margin-top:.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${h.desc}</div>
+        <div><span class="hist-ver">v${h.version}</span> <span class="hist-code">code ${h.vcode}</span></div>
+        <div class="hist-desc">${h.desc}</div>
       </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:.62rem;font-weight:700;color:#475569">${dateStr}</div>
-        <div style="font-size:.6rem;color:#334155">${timeStr}</div>
-      </div>
+      <div class="hist-date">${ds}<br>${ts}</div>
     </div>`;
   }).join('');
 }
 
 // ── Toast ────────────────────────────────────────────────────────────────
-let _toastTimer;
+let _tt;
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.classList.add('show');
-  clearTimeout(_toastTimer);
-  _toastTimer = setTimeout(() => t.classList.remove('show'), 3500);
+  clearTimeout(_tt);
+  _tt = setTimeout(() => t.classList.remove('show'), 3500);
 }
 </script>
 </body>
